@@ -7,21 +7,22 @@ $rta = executeQuery($sql);
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="/milocalhostoscar/styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
 </head>
 <body>
     <div>
-        <form action="/milocalhostoscar/buscar.php" method="post">
+        <form action="buscar.php" method="post">
             <input type="text" name="buscar" id="">
             <input type="submit" value="Buscar">
-            <a href="/milocalhostoscar/nuevo.php">Nuevo</a>
+            <a href="nuevo.php">Nuevo</a>
         </form>    
     </div>
 
     <div>
+        <a href="dynamic/index.php">Go to Dynamic version</a>
         <table>
             <tr>
                 <td>ID</td>
@@ -38,11 +39,11 @@ $rta = executeQuery($sql);
                     <td><?php echo $mostrar['ape']; ?></td>
 
                     <td>
-                        <a href="/milocalhostoscar/editar.php?id=<?= $mostrar['id'] ?>">
+                        <a href="editar.php?id=<?= $mostrar['id'] ?>">
                             Editar
                         </a>
                         
-                        <a href="/milocalhostoscar/eliminar.php?id=<?= $mostrar['id'] ?>">
+                        <a href="eliminar.php?id=<?= $mostrar['id'] ?>">
                             Eliminar
                         </a>
                     </td>

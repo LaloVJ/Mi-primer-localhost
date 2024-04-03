@@ -1,5 +1,10 @@
 <?php
-$cnx = mysqli_connect("localhost", "pma", "123456", "milocalhostoscar");
+require('connection.php');
+
+// $sql = "SELECT id, nom, ape FROM talumno ORDER BY id DESC";
+// $rta = executeQuery($sql);		
+
+// $cnx = mysqli_connect("localhost", "pma", "123456", "milocalhostoscar");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_POST['id'];
@@ -7,8 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nuevoApellido = $_POST['nuevoApellido'];
 
     $sql = "UPDATE talumno SET nom='$nuevoNombre', ape='$nuevoApellido' WHERE id=$id";
-    mysqli_query($cnx, $sql);
-
+    //mysqli_query($cnx, $sql);
+    executeQuery($sql);
     header("Location: index.php");
     exit();
 }
@@ -17,7 +22,8 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $id = $_GET['id'];
 
     $sql = "SELECT id, nom, ape FROM talumno WHERE id = $id";
-    $rta = mysqli_query($cnx, $sql);
+    //$rta = mysqli_query($cnx, $sql);
+    $rta = executeQuery($sql);
     $alumno = mysqli_fetch_assoc($rta);
 } else {
     header("Location: index.php");

@@ -2,9 +2,13 @@
 function executeQuery($sql)
 {
     // Establecer las credenciales de la base de datos
-    $user    = "pma"; // Usuario de la base de datos (cambia si es diferente)
-    $pass    = "123456"; // Contraseña de la base de datos (cambia si es diferente)
-    $dbname  = "milocalhostoscar"; // Nombre de la base de datos que creaste en phpMyAdmin
+    // $user    = "pma"; // Usuario de la base de datos (cambia si es diferente)
+    // $pass    = "123456"; // Contraseña de la base de datos (cambia si es diferente)
+    // $dbname  = "milocalhostoscar"; // Nombre de la base de datos que creaste en phpMyAdmin
+
+    $user    = "root"; // Usuario de la base de datos (cambia si es diferente)
+    $pass    = ""; // Contraseña de la base de datos (cambia si es diferente)
+    $dbname  = "first_project"; // Nombre de la base de datos que creaste en phpMyAdmin
 
     // Conexión a la base de datos
     $connect = mysqli_connect("localhost", $user, $pass, $dbname);
